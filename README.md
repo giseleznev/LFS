@@ -18,12 +18,12 @@ dns домена (updater.frozy.io) CNAME api-invoke-url
 
 ## Upload
 здесь запустить бесконечный скрипт, который из указанного репозитория все git lfs файлы закачивает в указанное s3bucket
-'''
+```
 python3 main.py https://github.com/... bucketforexp
-'''
+```
 
 ## Download
 здесь запустить бесконечный скрипт, который из указанного репозитория все файлы. в том числе git lfs cкачивает cюда (на вход подать сертификат и приватный ключ, для пробных запусков уже лежат тут)
-'''
+```
 python3 main.py ./MyClient.pem ./MyClient.key https://github.com/...
-'''
+```
