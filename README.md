@@ -3,8 +3,8 @@
 1. *Создать ACM сертификат для dns домена, к которому будет привязан LFS сервер (updater.frozy.io).   
 2. В папке create в файле variables.tf указать нужные переменные(aws_region, bucket_name(можно не менять), bucket_name_for_certificate(можно не менять), dns_name, path_to_certificate(для пробных запусков готовый сертификат уже лежит в этой папке)).
 3. Запусть команды terraform init, terraform apply
-4. В конце напечатается api-invoke-url. Добавить в google domains CNAME-record: 
-dns домена (updater.frozy.io) CNAME api-invoke-url 
+4. В конце напечатается domain_name. Добавить в google domains CNAME-record: 
+dns домена (updater.frozy.io) CNAME domain_name 
 на этом 
 
 
@@ -18,13 +18,13 @@ dns домена (updater.frozy.io) CNAME api-invoke-url
 7. On the Validation page, click the down-arrow next to your domain name. Указанную тут СNAME record добавить в google domains.
 
 ## Upload
-здесь запустить бесконечный скрипт, который из указанного репозитория все git lfs файлы закачивает в указанное s3bucket
+здесь запустить бесконечный скрипт, который из указанного репозитория все git lfs файлы закачивает в указанное bucket_name
 ```
-python3 main.py https://github.com/... bucketforexp
+python3 main.py https://github.com/... bucket_name
 ```
 
 ## Download
-здесь запустить бесконечный скрипт, который из указанного репозитория все файлы. в том числе git lfs cкачивает cюда (на вход подать сертификат и приватный ключ, для пробных запусков уже лежат тут)
+здесь запустить бесконечный скрипт, который из указанного репозитория все файлы. в том числе git lfs cкачивает cюда (на вход подать пользовательский сертификат и приватный ключ, для пробных запусков уже лежат тут)
 ```
 python3 main.py ./MyClient.pem ./MyClient.key https://github.com/...
 ```
