@@ -18,13 +18,13 @@ dns домена (updater.frozy.io) CNAME domain_name
 7. On the Validation page, click the down-arrow next to your domain name. Указанную тут СNAME record добавить в google domains.
 
 ## Upload
-здесь запустить бесконечный скрипт, который из указанного репозитория все git lfs файлы закачивает в указанное bucket_name
+здесь запустить бесконечный скрипт, который из указанного репозитория все git lfs файлы закачивает в указанное bucket_nam, для пробного запуска можно пользоваться репозиторием из примера, там 3 jpg картинки
 ```
-python3 main.py https://github.com/... bucket_name
+python3 main.py  https://github.com/giseleznev/repforserver.git bucket_name
 ```
 
 ## Download
 здесь запустить бесконечный скрипт, который из указанного репозитория, обращаясь за lfs файлами по указанному домену, все файлы cкачивает cюда (на вход подать пользовательский сертификат и приватный ключ, для пробных запусков уже лежат тут)
 ```
-python3 main.py ./MyClient.pem ./MyClient.key https://github.com/... updater.frozy.io
+python3 main.py ./MyClient.pem ./MyClient.key  https://github.com/giseleznev/repforserver.git https://updater.frozy.io
 ```
