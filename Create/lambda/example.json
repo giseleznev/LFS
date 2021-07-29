@@ -1,0 +1,14 @@
+{
+  "objects": [
+    {
+      "oid": "1111111",
+      "size": 123,
+      "actions": {
+        "download": {
+          "href": "",
+          "expires_in": 3600
+        }
+      }
+    } 
+  ]
+}
